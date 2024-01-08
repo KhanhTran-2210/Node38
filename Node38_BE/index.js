@@ -60,20 +60,20 @@ app.post("/get-body", (req, res) => {
 
 import mysql from "mysql2";
 
-const conn = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "1234",
-  port: 3307,
-  database: "node38_SQL_B2",
-});
-app.get("/get-list-user", async (req, res) => {
-  let query = "SELECT * FROM users"; // tạo câu query để tương tác với database
-  try {
-    let data = await conn.promise().query(query);
-    // data = [data trả về từ database, thành phần cấu tạo nên table đó]
-    res.send(data[0]);
-  } catch (error) {
-    res.send(`error: ${error}`);
-  }
-});
+// const conn = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "1234",
+//   port: 3307,
+//   database: "node38_SQL_B2",
+// });
+// app.get("/get-list-user", async (req, res) => {
+//   let query = "SELECT * FROM users"; // tạo câu query để tương tác với database
+//   try {
+//     let data = await conn.promise().query(query);
+//     // data = [data trả về từ database, thành phần cấu tạo nên table đó]
+//     res.send(data[0]);
+//   } catch (error) {
+//     res.send(`error: ${error}`);
+//   }
+// });

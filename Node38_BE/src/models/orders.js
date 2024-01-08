@@ -1,15 +1,23 @@
 import _sequelize from "sequelize";
 const { Model, Sequelize } = _sequelize;
 
-export default class rate_res extends Model {
+export default class orders extends Model {
   static init(sequelize, DataTypes) {
     return super.init(
       {
-        rate_id: {
+        orders_id: {
           type: DataTypes.INTEGER,
           primaryKey: true,
           autoIncrement: true,
           allowNull: false,
+        },
+        code: {
+          type: DataTypes.STRING(255),
+          allowNull: true,
+        },
+        arr_sub_id: {
+          type: DataTypes.STRING(255),
+          allowNull: true,
         },
         user_id: {
           type: DataTypes.INTEGER,
@@ -31,14 +39,14 @@ export default class rate_res extends Model {
           type: DataTypes.INTEGER,
           allowNull: true,
         },
-        date_rate: {
-          type: DataTypes.DATEONLY,
+        date_order: {
+          type: DataTypes.DATE,
           allowNull: true,
         },
       },
       {
         sequelize,
-        tableName: "rate_res",
+        tableName: "orders",
         timestamps: false,
         indexes: [
           {

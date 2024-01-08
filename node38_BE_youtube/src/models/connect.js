@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 
-const sequelize = new Sequelize("SQL_Homework", "root", "1234", {
+const sequelize = new Sequelize("node38_youtube", "root", "1234", {
   host: "localhost",
   port: 3307,
   dialect: "mysql",
